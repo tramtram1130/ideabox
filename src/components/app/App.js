@@ -14,10 +14,16 @@ class App extends Component {
       ]
     }
     this.addIdea = this.addIdea.bind(this)
+    this.deleteIdea = this.deleteIdea.bind(this)
   }
 
   addIdea(newIdea) {
     this.setState({ideas: [...this.state.ideas, newIdea]})
+  }
+
+  deleteIdea(id) {
+    const updatedIdeas = this.state.ideas.filter(idea => idea.id != id)
+    this.setState({ideas: updatedIdeas})
   }
 
   render() {
@@ -30,6 +36,7 @@ class App extends Component {
         />
         <Ideas 
           ideas={this.state.ideas}
+          deleteIdea={this.deleteIdea}
         />
       </main>
     )
