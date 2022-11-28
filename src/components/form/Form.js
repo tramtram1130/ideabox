@@ -10,13 +10,25 @@ class Form extends Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange(event) {
+  handleChange = event => {
     const {name, value} = event.target
     this.setState({[name]: value})
     console.log(this.state)
   }
 
-  handleSubmit() {
+  handleSubmit = event => {
+    event.preventDefault()
+    const newIdea = {
+      id: Date.now(),
+      ...this.state
+    }
+    this.props.addIdea(newIdea)
+    this.clearInputs()
+  }
+
+  clearInputs = () => {
+    this.setState({
+      title: "", description: ""})
   }
 
   render() {
@@ -36,7 +48,7 @@ class Form extends Component {
           value={this.state.description}
           onChange={this.handleChange}
         />
-        <button>SUBMIT</button>
+        <button onClick={event => this.handleSubmit(event)}>SUBMIT</button>
       </form>
     )
   }
