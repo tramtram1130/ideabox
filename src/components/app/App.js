@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './App.css'
 import Ideas from '/Users/tramtram/turing_work/3mod/projects/1week/ideabox/src/components/ideas/Ideas.js'
+import Form from '/Users/tramtram/turing_work/3mod/projects/1week/ideabox/src/components/form/Form.js'
 
 class App extends Component {
   constructor() {
@@ -18,6 +19,7 @@ class App extends Component {
       <main className="App">
         <h1>IdeaBox!</h1>
         {!this.state.ideas.length && <h2>No ideas yet -- add some!</h2>}
+        <Form />
         <Ideas 
           ideas={this.state.ideas}
         />
