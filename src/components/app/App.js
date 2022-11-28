@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from '/Users/tramtram/turing_work/3mod/projects/1week/ideabox/src/logo.svg';
 import './App.css';
 
 function App() {
