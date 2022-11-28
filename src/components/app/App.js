@@ -9,17 +9,16 @@ class App extends Component {
       ideas: [
         { id: 1, title: 'Prank Travis', description: 'Stick googly eyes on all his stuff' },
         { id: 2, title: 'Make a secret password app', description: 'So you and your rideshare driver can both know neither one of you is lying' },
-        { id: 3, title: 'Learn a martial art', description: 'To exact vengeance upon my enemies' },
+        { id: 3, title: 'Learn a martial art', description: 'To exact vengeance upon my enemies' }
       ]
     }
   }
   render() {
     return (
       <main className="App">
-        <h1>Ideas go here!</h1>
+        <h1>IdeaBox!</h1>
         <Ideas 
-          name="Tram"
-          age="almost 27"
+          ideas={this.state.ideas}
         />
       </main>
     )
