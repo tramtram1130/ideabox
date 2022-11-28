@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import './App.css'
+import Ideas from '/Users/tramtram/turing_work/3mod/projects/1week/ideabox/src/components/ideas/Ideas.js'
 
 class App extends Component {
   constructor() {
@@ -14,8 +16,11 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <h1>IdeaBox</h1>
-        <p>Hi!</p>
+        <h1>Ideas go here!</h1>
+        <Ideas 
+          name="Tram"
+          age="almost 27"
+        />
       </main>
     )
   }
