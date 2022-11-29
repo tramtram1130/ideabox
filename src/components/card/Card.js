@@ -2,7 +2,6 @@ import React from 'react'
 import './Card.css'
 
 const Card = (props) => {
-  console.log('Card Props: ', props)
   const {title, description, id, deleteIdea} = props
   return (
     <div className="card">
