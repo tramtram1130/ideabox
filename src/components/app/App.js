@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './App.css'
 import Ideas from '/Users/tramtram/turing_work/3mod/projects/1week/ideabox/src/components/ideas/Ideas.js'
+import Form from '/Users/tramtram/turing_work/3mod/projects/1week/ideabox/src/components/form/Form.js'
 
 class App extends Component {
   constructor() {
@@ -12,14 +13,30 @@ class App extends Component {
         { id: 3, title: 'Learn a martial art', description: 'To exact vengeance upon my enemies' }
       ]
     }
+    this.addIdea = this.addIdea.bind(this)
+    this.deleteIdea = this.deleteIdea.bind(this)
   }
+
+  addIdea(newIdea) {
+    this.setState({ideas: [...this.state.ideas, newIdea]})
+  }
+
+  deleteIdea(id) {
+    const updatedIdeas = this.state.ideas.filter(idea => idea.id != id)
+    this.setState({ideas: updatedIdeas})
+  }
+
   render() {
     return (
       <main className="App">
         <h1>IdeaBox!</h1>
         {!this.state.ideas.length && <h2>No ideas yet -- add some!</h2>}
+        <Form 
+          addIdea={this.addIdea}
+        />
         <Ideas 
           ideas={this.state.ideas}
+          deleteIdea={this.deleteIdea}
         />
       </main>
     )
